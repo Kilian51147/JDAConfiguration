@@ -1,5 +1,8 @@
 //Everything is optional
+//Order does not matter
 token="TOKEN HERE"
 prefix="PREFIX HERE"
 join-message="JOIN MESSAGE HERE"
 quit-message="QUIT MESSAGE HERE"
+join-channel="JOIN CHANNEL HERE"
+quit-channel="QUIT CHANNEL HERE"
