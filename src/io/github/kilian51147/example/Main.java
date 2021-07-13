@@ -2,6 +2,9 @@ package io.github.kilian51147;
 
 import javax.security.auth.login.LoginException;
 
+import io.github.kilian51147.manage.CommandListener;
+import io.github.kilian51147.manage.JoinListener;
+import io.github.kilian51147.manage.QuitListener;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 
 public class Main 
@@ -15,6 +18,8 @@ public class Main
 			DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(config.getToken());
 			
 			builder.addEventListeners(new CommandListener());
+			builder.addEventListeners(new JoinListener());
+			builder.addEventListeners(new QuitListener());
 			
 			System.out.println("Bot Online");
 			
