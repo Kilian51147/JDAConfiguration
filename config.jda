@@ -1,0 +1,5 @@
+//Everything is optional
+token="TOKEN HERE"
+prefix="PREFIX HERE"
+join-message="JOIN MESSAGE HERE"
+quit-message="QUIT MESSAGE HERE"
