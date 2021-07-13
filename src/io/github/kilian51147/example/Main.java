@@ -2,9 +2,9 @@ package io.github.kilian51147;
 
 import javax.security.auth.login.LoginException;
 
-import io.github.kilian51147.manage.CommandListener;
-import io.github.kilian51147.manage.JoinListener;
-import io.github.kilian51147.manage.QuitListener;
+import io.github.kilian51147.CommandListener;
+import io.github.kilian51147.JoinListener;
+import io.github.kilian51147.QuitListener;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 
 public class Main 
