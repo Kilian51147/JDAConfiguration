@@ -30,6 +30,11 @@ public class JDAConfiguration
 			if (line.startsWith("token=\""))
 			{
 				String token = StringUtils.substringBetween(line, "\"", "\"");
+
+				if (line.contains("{"))
+				{
+					String value = StringUtils.substringBetween(line, "{", "}");
+				}
 				return token;
 			}
 		}
@@ -66,6 +71,21 @@ public class JDAConfiguration
 		return null;
 	}
 	
+	public String getJoinMessage(Object value)
+	{
+		while (scanner.hasNext())
+		{
+			String line = scanner.nextLine();
+			
+			if (line.startsWith("join-message=\""))
+			{
+				String message = StringUtils.substringBetween(line, "\"", "\"");
+				return message.replace("{value}", value.toString());
+			}
+		}
+		return null;
+	}
+	
 	public String getQuitMessage()
 	{
 		while (scanner.hasNext())
@@ -76,6 +96,51 @@ public class JDAConfiguration
 			{
 				String message = StringUtils.substringBetween(line, "\"", "\"");
 				return message;
+			}
+		}
+		return null;
+	}
+	
+	public String getQuitMessage(Object value)
+	{
+		while (scanner.hasNext())
+		{
+			String line = scanner.nextLine();
+			
+			if (line.startsWith("quit-message=\""))
+			{
+				String message = StringUtils.substringBetween(line, "\"", "\"");
+				return message.replace("{value}", value.toString());
+			}
+		}
+		return null;
+	}
+	
+	public String getJoinChannel()
+	{
+		while (scanner.hasNext())
+		{
+			String line = scanner.nextLine();
+			
+			if (line.startsWith("join-channel=\""))
+			{
+				String channel = StringUtils.substringBetween(line, "\"", "\"");
+				return channel;
+			}
+		}
+		return null;
+	}
+	
+	public String getQuitChannel()
+	{
+		while (scanner.hasNext())
+		{
+			String line = scanner.nextLine();
+			
+			if (line.startsWith("quit-channel=\""))
+			{
+				String channel = StringUtils.substringBetween(line, "\"", "\"");
+				return channel;
 			}
 		}
 		return null;
